@@ -1,3 +1,5 @@
+require('dotenv').config(); // Load the .env file
+
 /**
  * @typedef {Object} Config
  * @property {string} [botId] => Your's bot's client id
@@ -6,8 +8,8 @@
  * @note you can add other properties to this object by yourself and access them in your code using `client.config.<your-property>`
  */
 const config = {
-	botId: "",
-	botToken: "",
-	ownerId: "",
+	botId: process.env.BOT_ID || "",
+	botToken: process.env.BOT_TOKEN || "",
+	ownerId: process.env.OWNER_ID || "",
 };
 module.exports = config;
